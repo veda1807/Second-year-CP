@@ -11,5 +11,18 @@
 
 
 def dicetoorderedhand(a, b, c):
-	# your code goes here
-	pass
+	# lst=[a,b,c]
+	# lst.sort()
+	# return int("".join([str(i) for i in lst[::-1]]))
+	
+	minimum=min(a,b,c)
+	maximum=max(a,b,c)
+	# medium=a+b+c-maximum-minimum
+	if (a!=minimum) and (a!=maximum):
+		medium=a
+	elif (b!=minimum) and (b!=maximum):
+		medium=b
+	else:
+		medium=c
+	return int(str(maximum)+str(medium)+str(minimum))
+
