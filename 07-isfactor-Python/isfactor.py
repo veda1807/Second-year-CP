@@ -4,6 +4,24 @@
 # Note that every integer is a factor of 0.
 
 
+# def fun_isfactor(f, n):
+# 	if (n==0):
+# 		return True
+# 	elif (f==0) :
+# 		return False
+# 	elif(n%f==0):
+# 		return True
+# 	elif(n%f!=0):
+# 		return False
+	
 
 def fun_isfactor(f, n):
-	return False # replace with your solution
+	if(n==0 and f==0):
+		return True
+	elif (f==0) or  n%f!=0:
+		return False
+	
+	elif (n==0) and (n%f==0):
+		return True
+	else:
+		return True # replace with your solution
