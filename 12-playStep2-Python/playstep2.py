@@ -34,5 +34,72 @@
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
 def playstep2(hand, dice):
-	# your code goes here
-	pass
+	digit_1= hand//100 
+	digit_2= (hand%100)//10
+	digit_3=hand%10
+	
+	lst1=[digit_1, digit_2, digit_3]
+	new_list=[]
+
+	if (digit_1!= digit_2 and digit_2!=digit_3 and digit_1!=digit_3):
+		lst1.sort(reverse=True)
+
+		new_list.append(str(lst1[0]))
+
+		# rolling_dice=dice%10
+		new_list.append(str(dice%10))
+		# dice=dice%10
+		d=(dice//10)%10
+		dice=dice//10
+		new_list.append(str(d))
+		dice=dice//10
+		new_list.sort(reverse=True)
+		result=int("".join(new_list))
+		return(result, dice)
+	elif (digit_1 == digit_2 or digit_3== digit_2 or digit_3== digit_1):
+		# roll_dice=dice%10
+
+		if(digit_1==digit_2):
+			# print(digit_1,digit_3)
+			new_list.append(str(digit_1))
+			new_list.append(str(digit_2))
+			new_list.append(str(dice%10))
+			# print (new_list)
+			new_list.sort(reverse=True)
+			# print (new_list)
+			result=int("".join(new_list))
+			return (result, dice//10)
+		elif(digit_2==digit_3):
+			# print(digit_1,digit_3)
+			new_list.append(str(digit_2))
+			new_list.append(str(digit_3))
+			new_list.append(str(dice%10))
+			# print (new_list)
+			new_list.sort(reverse=True)
+			# print (new_list)
+			result=int("".join(new_list))
+			return (result, dice//10)
+		elif(digit_1==digit_3):
+			# print(digit_1,digit_3)
+			new_list.append(str(digit_1))
+			
+			new_list.append(str(dice%10))
+			new_list.append(str(digit_3))
+			# print (new_list)
+			new_list.sort(reverse=True)
+			# print (new_list)
+			result=int("".join(new_list))
+			return (result, dice//10)
+	else:
+			return (hand, dice)
+# print(playstep2(413, 2345))
+# print(playstep2(544,451))
+# print(playstep2(454,451))
+
+
+
+
+		
+
+
+
