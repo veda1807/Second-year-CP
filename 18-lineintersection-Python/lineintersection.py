@@ -6,4 +6,14 @@
 
 def lineintersection(m1, b1, m2, b2):
 	# your code goes here
-	pass
+	if (b1==b2 or m1==m2):
+		return None
+	elif (b1//b2 == m1//m2):
+		return None
+	else:
+		x=(b2-b1)/(m1-m2)
+		return x
+print(lineintersection(8, 13, 4, 17))
+
+
+
