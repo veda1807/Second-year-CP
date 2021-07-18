@@ -53,4 +53,36 @@ class stack(object):
         return self.ll.delete_first()
         # pass
 
+
+
+
+
+
+
+# class Stack:
+#     def __init__(self):
+#         self.stack=list()
+#     def push(self, element):
+#         self.stack.append(element)
+#     def pop(self):
+#         if len(self.stack)>0:
+#             return self.stack.pop()
+#         else:
+#             return "No elements"
+#     def peek(self):
+#         if len(self.stack)>0:
+#             return self.stack[len(self.stack)-1]
+#         else:
+#             return None
     
+
+
+#         # pass
+
+# obj=Stack()
+# obj.push(2)
+# print(obj.stack)
+# obj.push(1)
+# print(obj.stack)
+# obj.pop()
+# print(obj.stack)
