@@ -22,11 +22,12 @@
 #   [ 0, 1, 3] ]
 
 # import numpy as np
+import pytest
 
 def removeRowAndCol(L, row, col):
     a=[]
     if(len(L)==1 or len(L)==0 or row==0 or col==0) :
-        return "We can not delete thr row and col"
+        return "We can not delete the row and col"
     else:
         for i in L:
             del i[col]
@@ -34,7 +35,10 @@ def removeRowAndCol(L, row, col):
         return L
 
 # Write your own test cases.
-
-# a=[[0, 9, 2],
-#  [4, 5, 6],
-#  [8, 9, 7]]
+@pytest.mark.parametrize ('L,row,col, result',[
+    ([ [ 2, 3, 4],
+    [5, 8, 3],
+    [0, 6, 3]], 1,2, [[2, 3], [0, 6]])
+    ])
+def test(L, row,col, result):
+    assert removeRowAndCol(L, row, col)==result
