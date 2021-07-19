@@ -12,8 +12,10 @@ def lineintersection(m1, b1, m2, b2):
 		return None
 	else:
 		x=(b2-b1)/(m1-m2)
+		if(x<=1):
+			return None
 		return x
-print(lineintersection(8, 13, 4, 17))
+
 
 
 
