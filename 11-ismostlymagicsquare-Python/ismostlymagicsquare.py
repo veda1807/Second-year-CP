@@ -32,7 +32,7 @@ def ismostlymagicsquare(a):
 	d2=0
 	for i in range(len(a)):
 		d1+=a[i][i]
-		d2+=a[i][len(a)-i-1]     
+		d2+=a[i][len(a)-1-i]     
 	if(d1!=d2):
 		return False
 	return True
