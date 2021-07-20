@@ -38,3 +38,61 @@ def ismostlymagicsquare(a):
 	return True
 
 		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# def ismostlymagicsquare(a):
+# 	for i in range(len(a)):
+# 		sum_row=0
+# 		sum_col=0
+# 		for j in range(len(a[0])):
+# 			sum_row=sum_row+a[i][j]
+# 			sum_col=sum_col+a[j][i]
+# 		if(sum_row!=sum_col):
+# 			return False
+	
+# 	diagonal_1=0
+# 	diagonal_2=0
+# 	for i in range(len(a)):
+# 		diagonal_1=diagonal_1+a[i][i]
+# 		diagonal_2=diagonal_2+a[i][len(a)-1-i]
+# 	if(diagonal_1!=diagonal_2):
+# 		return False
+# 	else:
+# 		return True
+# print(ismostlymagicsquare([[1, 2, 3], [4, 5, 6], [7, 8, 9]]))
+
+
+
+
