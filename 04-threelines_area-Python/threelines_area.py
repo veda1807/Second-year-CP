@@ -5,5 +5,9 @@
 import math
 
 def fun_threelines_area(a, b, c):
-	return 0
+	k=(a+b+c)/2        				#(5+3+4)/2 =6 
+	a=k*(k-a)*(k-b)*(k-c)			#36
+	b=math.sqrt(a)					#6
+	area_threelines=int(b)			#6
+	return area_threelines			#6
 	
