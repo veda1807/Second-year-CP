@@ -4,8 +4,12 @@
 # Then, we loop over each row and col, and the result[row][col] is just the sum of L[row][col] and M[row][col]. For example:
 # L = [ [1,  2,  3],
 #       [4,  5,  6] ]
+
 # M = [ [21, 22, 23],
 #       [24, 25, 26]]
+
+
+
 # N = [ [1+21, 2+22, 3+23],
 #       [4+24, 5+25, 6+26]]
 # assert(matrixAdd(L, M) == N)
@@ -19,17 +23,24 @@ def matrixadd(L, M):
 	if len(L[0])==len(M[0])==1:
 		a=[[L[0][0]+M[0][0]]]
 		return a
-	elif(len(L)!=len(M) or len(L[0])!=len(M[0]) or len(L[1])!=len(M[1])):
+	if(len(L)==len(M)) and len(L[0])!=len(M[0]) or len(L[1])!=len(M[1]):
 	
 		return None
 	else:
-		result=[[L[i][j] + M[i][j] for j in range(len(L[0]))] for i in range(len(L))]
-		return result
+	# 	result=[[L[i][j] + M[i][j] for j in range(len(L[0]))] for i in range(len(L))]
+	# 	return result
+		r=len(L)
+		c=len(L[0])
+		# result=[]
+		matrix = [[0] * c for i in range(r)]
 
 
-		# for i in range(len(L)):
-		# 	for j in range(len(L[0])):
-		# 		result=[L[i][j]+M[i][j]]
-		# 		return result
+		for i in range(r):
+			for j in range(c):
+				matrix[i][j]=L[i][j]+M[i][j]
+
+		return matrix
+
+				
 
 	
