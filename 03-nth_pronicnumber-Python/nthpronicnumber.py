@@ -4,12 +4,12 @@
 # number n is a product of x and (x+1).
 
 def pronicnumber(n):
-    f=0
+    a=0
     for i in range(n):
         if i *(i+1)==n:
-            f=1
+            a=1
             break
-    return f==1
+    return a==1
  
 def nthpronicnumber(n):
     found=1
