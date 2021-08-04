@@ -10,36 +10,39 @@
 # However, they also are here specifically because they are just the right helper 
 # functions to make nthHappyNumber(n) easier to write!
 
-# def ishappyprimenumber(n):
-#     # Your code goes here
-#     pass
+def isprime(n):
+    if(n==2 or n==3):
+        return True
+    if(n<2 or n%2==0):
+        return False
+    if(n>3):
+        for i in range(3,n//2):
+            if(n%2==0):
+                return False
+        return True
+
+def ishappyNumber(n):
+    if(n<0):
+        return False
+    if (n==1):
+        return True
+    sum=0
+    while(n>10):
+        sum=0
+        for i in str(n):
+            sum=sum+(int(i)**2)
+        n=sum
+    return sum
 
 
+def ishappyprimenumber(n):
+    if (ishappyNumber(n) and isprime(n)):
+        return True
+    return False
 
-# def isHappyPrime(x):
-#     if (x < 2):
-#         return False
-#     if (x == 2):
-#         return True
-#     if (x % 2 == 0):
-#         return False
-#     maxFactor = round(x**0.5)
-#     for factor in range(3,maxFactor+1,2):
-#         if (x % factor == 0):
-#             return False
-#     return True
-# def squareDigits(n):
-#     count=0
-#     while(n>0):
-#         count=count+(n%10)**2
-#         n = n//10
-#     return count
-# def isHappy(n):
-#     while(True):
-#         if n==1:
-#             return True
-#         elif n==4:
-#             return False
-#         else:
-#             n=squareDigits(n)
-#     return False
+    
+print(ishappyprimenumber(2))
+print(ishappyprimenumber(23))
+print(ishappyprimenumber(19))
+print(ishappyprimenumber(31))
+print(ishappyprimenumber(709))
