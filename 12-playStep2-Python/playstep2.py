@@ -33,47 +33,47 @@
 # into a sorted hand.
 # Hint: Also, remember to use % to get the one's digit, and use //= to get rid of the one's digit.
 
-# def playstep2(hand, dice):  #(413, 2312) == 421,23
-# 	digit_1= hand//100      #4
-# 	digit_2= (hand%100)//10  #1
-# 	digit_3=hand%10   		#3
-# 	lst1=[digit_1, digit_2, digit_3]  #[4,1,3]
-# 	new_list=[]  #empty list
-# 	if (digit_1!= digit_2 and digit_2!=digit_3 and digit_1!=digit_3):  #(4!=1 and 1!=3 and 3!=4)
-# 		lst1.sort(reverse=True) #[4,3,1]
-# 		new_list.append(str(lst1[0]))  #  newlist = ["4"]
-# 		new_list.append(str(dice%10))   # in newlist = ["4","2"]
-# 		d=(dice//10)%10  				# 2312//10 = 231 , 231%10 = 1
-# 		dice=dice//10  					# dice=2312//10 = 231 == updating the dice
-# 		new_list.append(str(d))  		# in newlist = ["4", "2", "1"]
-# 		dice=dice//10 	  				# dice=231//10 = 23 == updating the dice
-# 		new_list.sort(reverse=True) 	# it sorts the new_list in descending order
-# 		result=int("".join(new_list)) 	#it converts into integer
-# 		return(result, dice) 			
-# 	elif (digit_1 == digit_2 or digit_3== digit_2 or digit_3== digit_1):
-# 		if(digit_1==digit_2):  
-# 			new_list.append(str(digit_1)) # adding digit_1 of hand to newlist
-# 			new_list.append(str(digit_2)) # same .. now digit 2
-# 			new_list.append(str(dice%10))  #taking last digit from dice
-# 			new_list.sort(reverse=True)   # it sorts  in descending
-# 			result=int("".join(new_list))  # converts into int
-# 			return (result, dice//10)  # int , dice==>except the last digit , it returns remaining digits
-# 		elif(digit_2==digit_3):
-# 			new_list.append(str(digit_2))
-# 			new_list.append(str(digit_3))
-# 			new_list.append(str(dice%10))
-# 			new_list.sort(reverse=True)
-# 			result=int("".join(new_list))
-# 			return (result, dice//10)
-# 		elif(digit_1==digit_3):
-# 			new_list.append(str(digit_1))
-# 			new_list.append(str(dice%10))
-# 			new_list.append(str(digit_3))
-# 			new_list.sort(reverse=True)
-# 			result=int("".join(new_list))
-# 			return (result, dice//10)
-# 	else:
-# 			return (hand, dice)  #if all the digits same then it returns hand and dice
+def playstep2(hand, dice):  #(413, 2312) == 421,23
+	digit_1= hand//100      #4
+	digit_2= (hand%100)//10  #1
+	digit_3=hand%10   		#3
+	lst1=[digit_1, digit_2, digit_3]  #[4,1,3]
+	new_list=[]  #empty list
+	if (digit_1!= digit_2 and digit_2!=digit_3 and digit_1!=digit_3):  #(4!=1 and 1!=3 and 3!=4)
+		lst1.sort(reverse=True) #[4,3,1]
+		new_list.append(str(lst1[0]))  #  newlist = ["4"]
+		new_list.append(str(dice%10))   # in newlist = ["4","2"]
+		d=(dice//10)%10  				# 2312//10 = 231 , 231%10 = 1
+		dice=dice//10  					# dice=2312//10 = 231 == updating the dice
+		new_list.append(str(d))  		# in newlist = ["4", "2", "1"]
+		dice=dice//10 	  				# dice=231//10 = 23 == updating the dice
+		new_list.sort(reverse=True) 	# it sorts the new_list in descending order
+		result=int("".join(new_list)) 	#it converts into integer
+		return(result, dice) 			
+	elif (digit_1 == digit_2 or digit_3== digit_2 or digit_3== digit_1):
+		if(digit_1==digit_2):  
+			new_list.append(str(digit_1)) # adding digit_1 of hand to newlist
+			new_list.append(str(digit_2)) # same .. now digit 2
+			new_list.append(str(dice%10))  #taking last digit from dice
+			new_list.sort(reverse=True)   # it sorts  in descending
+			result=int("".join(new_list))  # converts into int
+			return (result, dice//10)  # int , dice==>except the last digit , it returns remaining digits
+		elif(digit_2==digit_3):
+			new_list.append(str(digit_2))
+			new_list.append(str(digit_3))
+			new_list.append(str(dice%10))
+			new_list.sort(reverse=True)
+			result=int("".join(new_list))
+			return (result, dice//10)
+		elif(digit_1==digit_3):
+			new_list.append(str(digit_1))
+			new_list.append(str(dice%10))
+			new_list.append(str(digit_3))
+			new_list.sort(reverse=True)
+			result=int("".join(new_list))
+			return (result, dice//10)
+	else:
+			return (hand, dice)  #if all the digits same then it returns hand and dice
  
 
 
